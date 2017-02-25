@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding='UTF-8' ?>
+<!-- 
+
+This build file will be used to generate stubs for the given WSDL files.
+
+-->
+<project name="WSClient-App" basedir="." default="ws:generate">
+
+	<property file="build.properties" />
+	
+        <path id="jaxws-classpath">
+		<fileset dir="${jaxws.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="ws:import:taskdef">
+		<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+			<classpath>
+				<path refid="jaxws-classpath" />
+			</classpath>
+		</taskdef>
+	</target>
+	
+	<target name="ws:clean">
+		<delete dir="${ws.gen.src.dir}" />
+		<mkdir dir="${ws.gen.src.dir}"/>
+		<delete dir="${ws.gen.bin.dir}" />
+		<mkdir dir="${ws.gen.bin.dir}"/>
+	</target>
+	
+	<target name="ws:generate" depends="ws:import:taskdef">
+		<wsimport           
+				wsdl="${ws.wsdl}"      
+				destdir="${ws.gen.bin.dir}"
+				sourcedestdir="${ws.gen.src.dir}"
+				verbose="true"
+				package="${ws.package}">
+			<!-- configuring jaxb bindings -->
+			<binding dir="${basedir}" 
+				includes="javabindings.xml" />
+			
+		</wsimport>
+	</target>
+</project>
