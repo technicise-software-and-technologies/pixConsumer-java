@@ -57,10 +57,10 @@ public class IVLPPDPQ
 
     private final static long serialVersionUID = 20130510160300L;
     @XmlElementRefs({
-        @XmlElementRef(name = "low", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "width", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "high", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "center", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "low", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "center", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "width", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<? extends PPDPQ>> rest;
 
@@ -70,8 +70,8 @@ public class IVLPPDPQ
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "High" is used by two different parts of a schema. See: 
-     * line 596 of file:/home/chandra/code/technicise-IHE-actors/openpixpdq12-resources/schema/HL7V3/NE2008/coreschemas/datatypes.xsd
-     * line 587 of file:/home/chandra/code/technicise-IHE-actors/openpixpdq12-resources/schema/HL7V3/NE2008/coreschemas/datatypes.xsd
+     * line 596 of file:/home/chandra/code/pixConsumer-java/openpixpdq12-resources/schema/HL7V3/NE2008/coreschemas/datatypes.xsd
+     * line 587 of file:/home/chandra/code/pixConsumer-java/openpixpdq12-resources/schema/HL7V3/NE2008/coreschemas/datatypes.xsd
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names: 
@@ -92,10 +92,10 @@ public class IVLPPDPQ
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link PPDPQ }{@code >}
+     * {@link JAXBElement }{@code <}{@link IVXBPPDPQ }{@code >}
      * {@link JAXBElement }{@code <}{@link IVXBPPDPQ }{@code >}
      * {@link JAXBElement }{@code <}{@link PPDPQ }{@code >}
-     * {@link JAXBElement }{@code <}{@link IVXBPPDPQ }{@code >}
+     * {@link JAXBElement }{@code <}{@link PPDPQ }{@code >}
      * 
      * 
      */
